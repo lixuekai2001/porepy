@@ -432,7 +432,10 @@ class Exporter:
                 d["mortar_side"][side] = side.value * ones
                 d["cell_id"][side] = np.arange(g.num_cells, dtype=int) + mg_num_cells
                 mg_num_cells += g.num_cells
-                d["grid_edge_number"][side] = d["edge_number"] * ones
+                if "edge_number" in d:
+                    d["grid_edge_number"][side] = d["edge_number"] * ones
+                else:
+                    d["grid_edge_number"][side] = -ones
 
         # collect the data and extra data in a single stack for each dimension
         for dim in self.m_dims:
