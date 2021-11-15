@@ -168,6 +168,8 @@ from porepy.numerics.fracture_deformation.conforming_propagation import (
 
 # Related to models and solvers
 from porepy.numerics.nonlinear.nonlinear_solvers import NewtonSolver
+from porepy.numerics import nonlinear
+
 from porepy.numerics.linear_solvers import LinearSolver
 from porepy.models.run_models import (
     run_stationary_model,
